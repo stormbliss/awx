@@ -1,6 +1,6 @@
 ---
 - name: Test IOS Facts
-  hosts: pe_routers
+  hosts: PE2
   gather_facts: false
   tasks:
   

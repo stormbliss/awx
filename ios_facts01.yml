@@ -1,6 +1,6 @@
 ---
 - name: Test IOS Facts
-  hosts: RRGROUP
+  hosts: pe_routers
   gather_facts: false
   tasks:
   

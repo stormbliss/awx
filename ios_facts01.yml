@@ -5,7 +5,7 @@
   tasks:
   
     - name: IOS FACTS - 01
-      ios_facts:
+      cisco.ios.ios_facts:
        gather_subset: all
       register: all_subset
      
@@ -15,7 +15,7 @@
 
         
     - name: Gather HW
-      ios_facts:
+      cisco.ios.ios_facts:
         gather_subset: hardware
       register: hw
     - name: Print HW
@@ -24,7 +24,7 @@
 
 
     - name: Gather Int
-      ios_facts:
+      cisco.ios.ios_facts:
         gather_subset: interfaces
       register: int
     - name: Print Interfaces

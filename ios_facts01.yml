@@ -4,7 +4,7 @@
   gather_facts: false
   tasks:
   
-    - name: Gather Fcts - 01
+    - name: Gather Facts - 01
       cisco.ios.facts:
        gather_subset: all
       register: all_subset

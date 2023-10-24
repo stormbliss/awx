@@ -3,10 +3,6 @@
   hosts: csr1000v
   gather_facts: false
   tasks:
-
-    - name: Gather all legacy facts
-      cisco.ios.ios_facts:
-       gather_subset: all
   
     - name: Gather Fcts - 01
       cisco.ios.ios_facts:

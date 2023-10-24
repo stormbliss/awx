@@ -1,6 +1,6 @@
 ---
 - name: Test IOS Facts
-  hosts: PE2
+  hosts: csr1000v
   gather_facts: false
   tasks:
   

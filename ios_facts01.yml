@@ -1,11 +1,13 @@
 ---
 - name: Facts
-  hosts: csr1000v
+  hosts: iosv
   gather_facts: false
+  collections:
+    - cisco.ios
   tasks:
   
     - name: Gather Facts - 01
-      cisco.ios.facts:
+      ios_facts:
        gather_subset: all
       register: all_subset
      

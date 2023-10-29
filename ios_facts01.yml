@@ -3,11 +3,11 @@
   hosts: iosv
   gather_facts: false
   collections:
-    - cisco.ios
+    - cisco.ios.ios_facts
   tasks:
   
     - name: Gather Facts - 01
-      ios_facts:
+      cisco.ios.ios_facts:
        gather_subset: all
       register: all_subset
      

@@ -5,12 +5,11 @@
   collections:
     - cisco.ios.ios_facts
   tasks:
-  
     - name: Gather Facts - 01
       cisco.ios.ios_facts:
-       gather_subset: all
+        gather_subset: all
       register: all_subset
-     
     - name: PRINT ALL SUBSETS GATHERED
       debug:
         var: all_subset
+

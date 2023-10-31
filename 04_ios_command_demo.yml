@@ -1,7 +1,5 @@
----
   - name: Cisco IOS Command Demo
     hosts: csr1000v
-
     tasks:
       - name: Execute show commands
         ios_command:

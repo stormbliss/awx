@@ -1,14 +1,32 @@
 ---
-- name: Facts
+- name: Test IOS Facts
   hosts: csr1000v
   gather_facts: false
   tasks:
   
-    - name: Gather Facts - 01
-      cisco.ios.facts:
+    - name: IOS FACTS - 01
+      ios_facts:
        gather_subset: all
       register: all_subset
      
     - name: PRINT ALL SUBSETS GATHERED
       debug:
         var: all_subset
+
+        
+    - name: Gather HW
+      ios_facts:
+        gather_subset: hardware
+      register: hw
+    - name: Print HW
+      debug:
+        var: hw
+
+
+    - name: Gather Int
+      ios_facts:
+        gather_subset: interfaces
+      register: int
+    - name: Print Interfaces
+      debug:
+        var: int 

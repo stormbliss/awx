@@ -1,8 +1,12 @@
 ---
-- name: Test IOS Facts
+- name: Gather Cisco IOS Facts
   hosts: csr1000v
-  gather_facts: false
+  gather_facts: no
   tasks:
-     - name: Gather all legacy facts
-       cisco.ios.ios_facts:
-       gather_subset: all
+    - name: Gather Facts
+      cisco.ios.ios_facts:
+        gather_subset:
+          - all
+      register: result
+
+

@@ -1,3 +1,16 @@
-- name: Run show version on remote devices
-  ios_command:
-    commands: show version
+- name: Running show commands on Cisco IOS
+  hosts: csr1000v
+  gather_facts: false
+  tasks:
+    - name: Run multiple commands on Cisco IOS ROUTER
+      ios_command: #ansible module been used
+        commands: #commands to run
+          - show version
+          - show ip interface brief
+        wait_for: 
+          - result[0] contains Cisco IOS Software
+          - result[1] contains Ethernet0/0
+          
+      register: output    #register the output of the command in a variable named output
+
+    -  debug: var=output.stdout_lines   #print the variable at the console line by line

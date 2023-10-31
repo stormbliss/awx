@@ -1,6 +1,12 @@
-- name: Hello World Sample
+---
+- name: Gather Cisco IOS Facts
   hosts: csr1000v
+  gather_facts: no
   tasks:
-    - name: Hello Message
-      debug:
-        msg: "Hello World!"
+    - name: Gather Facts
+      cisco.ios.ios_facts:
+        gather_subset:
+          - all
+      register: result
+
+  

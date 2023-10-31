@@ -1,6 +1,6 @@
 ---
 - name: Facts
-  hosts: iosv
+  hosts: csr1000v
   gather_facts: false
   tasks:
   

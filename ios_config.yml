@@ -17,3 +17,8 @@
         parents: ip access-list extended test
         before: no ip access-list extended test
         match: exact
+    
+      register: output
+
+    - name: Printing at the console
+      debug: var=output.stdout_lines

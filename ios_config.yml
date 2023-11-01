@@ -15,4 +15,4 @@
       register: output
 
     - name: Printing at the console
-      debug: var=output.stdout_lines
+      debug: output.stdout_lines

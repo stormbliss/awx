@@ -9,11 +9,10 @@
       ios_config:
         save_when: modified
         lines:
-          - hostname "{{inventory_hostname}}"
           - ip name-server 8.8.8.8
           - no ip http server
           - ip http secure-server
       register: output
 
     - name: Printing at the console
-      debug: var=output
+      debug: var=output.stdout_lines

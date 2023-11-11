@@ -1,14 +1,14 @@
 ---
 - name: Failover To Backup via Pipelines
   hosts: core-switch-01
+  gather_facts: false
 
   tasks:
     - name: Configure Multiple interfaces
       cisco.ios.ios_config:
         parents: "{{ item }}"
         lines:
-          - no shut
-       
+          - shutdown
         save_when: modified
       with_items:
         - interface Ethernet0/2

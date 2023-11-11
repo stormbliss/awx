@@ -1,6 +1,6 @@
 ---
 - name: Failover To Backup via Pipelines
-  hosts: csr1000v
+  hosts: core-switch-01
 
   tasks:
     - name: Configure Multiple interfaces

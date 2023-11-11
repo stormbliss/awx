@@ -4,11 +4,12 @@
   gather_facts: false
 
   tasks:
-    - name: Configure Multiple interfaces
+    - name: Enable Backup Line
       cisco.ios.ios_config:
         parents: "{{ item }}"
         lines:
           - shutdown
         save_when: modified
+
       with_items:
         - interface Ethernet0/2

@@ -1,0 +1,28 @@
+---
+- name: Gather Cisco IOS XR Router Facts
+  hosts: ios-xr
+  gather_facts: no
+
+  tasks:
+    
+    - name: Run 'show version' on remote devices
+      cisco.iosxr.iosxr_command:
+        commands: 
+          - show version
+      register: show_version_output
+
+    - name: Display output of 'show version'
+      debug:
+        var: show_version_output
+
+    - name: Run 'show version' and check if output contains 'IOS-XR'
+      cisco.iosxr.iosxr_command:
+        commands: 
+          - show version
+        wait_for: 
+          - "result[0] contains 'IOS-XR'"
+      register: show_version_check_output
+
+    - name: Display output of 'show version' with check
+      debug:
+        var: show_version_check_output
